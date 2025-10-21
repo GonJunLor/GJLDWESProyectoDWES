@@ -1,0 +1,4 @@
+ErrorDocument 404 "Not Found The requested URL was not found on this server. Apache/2.4.58 (Ubuntu) Server at 10.199.8.153 Port 80"
+ErrorDocument 404 /GJLDWESProyectoDWES/error/404.html
+ErrorDocument 403 /GJLDWESProyectoDWES/error/403.html
+ErrorDocument 500 /GJLDWESProyectoDWES/error/500.html
