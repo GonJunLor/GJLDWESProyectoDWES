@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
     Autor: Gonzalo Junquera Lorenzo
-    Fecha modificación: 09/04/2025
+    Fecha modificación: 20/11/2025
     Descripción: Indice general de la asignatura
 -->
 <html lang="es">
@@ -70,26 +70,30 @@
                         <h4>UT5: DESARROLLO DE APLICACIONES WEB</h4>
                     </a>
                 </article>
+                <article class="practica">
+                    <iframe src="../GJLDWESLoginLogoffTema5/indexLoginLogoffTema5.php"></iframe>
+                    <a href="../GJLDWESLoginLogoffTema5/indexLoginLogoffTema5.php">
+                        <img src="webroot/media/images/ies.png" alt="Banner">
+                        <div class="superpuesto"></div>
+                        <h4>Login Logoff Tema 5</h4>
+                    </a>
+                </article>
             </div>
         </section>
     </main>
-    <footer id="pieEDD">
+    <footer id="pie">
         <div>
-            <a href="/feed/rss.xml" type="application/rss+xml" target="_blank"><i class="fa-solid fa-rss"></i></a>
-            <a href="https://github.com/GonJunLor/108EDDProyectoEDD" target="_blank">
+            <a href="https://github.com/GonJunLor/GJLDWESProyectoDWES.git" target="_blank">
                 <i class="fa-brands fa-github"></i>
             </a>
             <a href="https://mogutable.com/" target="_blank"><i class="fa-solid fa-house"></i></a>
-            <a id="w3c" href="https://validator.w3.org/check?uri=https://daw108.ieslossauces.es/108EDDProyectoEDD/index.html" target="_blank">          
-                <img src="/webroot/media/images/W3C.png" alt="Validado por W3C" width="55" >        
-            </a>
         </div>
-        2024-25 IES LOS SAUCES. &#169;Todos los derechos reservados. 
+        2025-26 IES LOS SAUCES. &#169;Todos los derechos reservados. 
         <div>
             <a href="/index.html">
             <address style="display: inline;">Gonzalo Junquera Lorenzo</address>
             </a>
-            <time datetime="2025-04-09">09-04-2025</time>
+            <time datetime="2025-11-20">20-11-2025</time>
         </div>
     </footer>
 </body>
