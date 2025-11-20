@@ -1,12 +1,200 @@
+:root {
+    --colorFondo1: #ffffff;
+    --colorFondo2: #f3f3f3;
+    --colorFondo3: #bfc9cd;
+    --colorFondo4: black;
+    --colorFondo5: rgb(253, 255, 253);
+    --colorFondo6: rgba(94, 28, 28, 0.8);
+  
+    --colorBorde: #c5c5c5;
+    --radioBorde: 6px;
+    --anchoBorde: 1px;
+  
+    --colorTexto: #000000;
+    --tamanoTexto: 16px;
+    --fuenteTexto1: Sofia,sans-serif;
+    --fuenteTexto2: Arial,sans-serif;
+    --fuenteTexto3: Mexico, serif;
+    --fuenteTexto4: Caslon, serif;
+
+    --anchoArticulo: 18vh;
+    --altoArticulo: 26vh;
+    --altoSuperpuesto: 20vw;
+
+    /* Combinación de dimensiones para el iframe, funciona al 50% */
+    --anchoIframe:calc(var(--anchoArticulo)*3.3);
+    --altoIframe:calc(var(--altoArticulo)*2.6);
+    --zoomIframe:0.3;
+
+    --imagenFondo: url(../media/images/codigo.jpg);
+}
 *{
-    margin: 0px;
-    padding: 0px;
+    padding: 0;
+    margin: 0;
+    font-family: var(--fuenteTexto2);
+    font-weight: bold;
 }
 
-body>header,header~footer{
-    margin: 30px 60px 45px 10px;
-    padding: 20px;
-    border: 5px solid blue;
-    background-color: aliceblue;
+/* Barra superior*/
+#aviso{
+    background-color: var(--colorFondo4);
+    color: white;
+    text-align: center;
+    font-size: 0.7em;
+    letter-spacing: 1px;
+    padding: 10px;
+}
+nav{
+    background-color: var(--colorFondo1);
+    border-bottom: var(--colorBorde) solid var(--anchoBorde);
+    padding: 15px 18px;
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
+body{
+    background-color: var(--colorFondo5);
+}
+/* Cada unidad */
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: var(--colorBorde) solid var(--anchoBorde);
+    margin-top: 2em;
+    padding-bottom: 4em;
+}
+section>header{
+    padding: 1em;
+    margin-bottom: 2em;
+}
+section>div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* Cada practica */
+article{
+    background-color: var(--colorFondo1);
+    width: var(--anchoArticulo);
+    height: var(--altoArticulo);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px;
+}
+article>a{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    text-decoration: none;
+    color: var(--colorTexto);
+    text-align: center;
+    font-weight: bolder;
+    height: 100%;
+}
+article>a>img{
+    width: var(--anchoArticulo);
+    margin-bottom: 2em;
+}
+.tituloPractica{
+    width: 96%;
+    height: 80%;
+    margin: 0 2%;
+    background-color: var(--colorFondo2);
+    border: 1px solid var(--colorFondo3);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: var(--colorFondo6);
+}
+
+.tituloPractica p:first-child{
+    font-size: 2rem;
+    font-family: var(--fuenteTexto1);
+    font-style: italic;
+}
+.tituloPractica p:nth-of-type(2){
+    font-size: 0.8rem;
+    font-family: var(--fuenteTexto4);
+    font-style: italic;
+}
+.practica { 
+    position: relative; 
+    display: inline-block; 
+} 
+.practica h4{
+    font-size: 0.8em;
+}
+.practica iframe { 
+    display: none; 
+    position: absolute; 
+    top: 0; 
+    left: 0%; 
+    width: var(--anchoIframe); 
+    /* height: var(--altoIframe);  */
+    height: 100%;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+} 
+.practica:hover iframe { 
+    background-color: var(--colorFondo1);
+    border:none;
+    display: block; 
+    zoom: var(--zoomIframe);
+    opacity: 1;
+}
+.superpuesto { 
+    position: absolute; 
+    top: 0; 
+    left: 0%;
+    width: var(--anchoArticulo);
+    height: var(--altoArticulo);
+    z-index: 200; 
+}
+.subtitulo {
+    text-align: center;
+}
+.subtitulo a {
+    padding-right: 4px;
+    text-decoration: none;
+    color:var(--colorTexto)
+}
+.subtitulo button{
+    margin-top: 5px;
+}
+.subtitulo>a:hover {
+    background-color: var(--colorFondo3);
+}
+
+/* Pie de pagína */
+body>footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+    background-color: var(--colorFondo3);
+    padding-top: 3em;
+    padding-bottom: 3em;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+body>footer>div:first-child{
+    display: flex;
+    margin-bottom: 1em;
+    font-size: 2em;
+}
+#w3c{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

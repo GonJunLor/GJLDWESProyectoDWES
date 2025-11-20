@@ -10,3 +10,7 @@
     font-family: 'Sofia';
     src: url('../fonts/Sofia/Sofia-Regular.ttf');
 }
+@font-face {
+    font-family: 'Caslon';
+    src: url('../fonts/LibreCaslonText-Italic.ttf');
+}
