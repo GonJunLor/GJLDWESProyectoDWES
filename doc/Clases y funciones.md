@@ -2,7 +2,7 @@
 
 - [FUNCIONES Y CLASES DE PHP](#funciones-y-clases-de-php)
   - [1. Variables Superglobales](#1-variables-superglobales)
-  - [2. Funciones de Salida y Depuración](#2-funciones-de-salida-y-depuración)
+  - [2. Funciones de Salida](#2-funciones-de-salida)
   - [3. Funciones de Utilidad, Tipado y Cadenas](#3-funciones-de-utilidad-tipado-y-cadenas)
   - [4. Archivos y Control de Flujo HTTP](#4-archivos-y-control-de-flujo-http)
   - [5. Funciones de Iteración de Arrays y JSON](#5-funciones-de-iteración-de-arrays-y-json)
@@ -31,7 +31,7 @@ Son arrays asociativos que están siempre disponibles en todos los ámbitos del 
 
 <hr>
 
-## <h2>2. Funciones de Salida y Depuración</h2>
+## <h2>2. Funciones de Salida</h2>
 
 <h3 style="color:#007bff;">echo</h3>
 
