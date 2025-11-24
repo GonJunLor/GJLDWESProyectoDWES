@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>SPRING BOOT</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="spring-boot">SPRING BOOT</h1>
+<ul>
+<li><a href="#spring-boot">SPRING BOOT</a>
+<ul>
+<li><a href="#descripci%C3%B3n-general">DESCRIPCIÓN GENERAL</a></li>
+<li><a href="#gu%C3%ADa-de-inicio-r%C3%A1pido">GUÍA DE INICIO RÁPIDO</a>
+<ul>
+<li><a href="#paso-1-iniciar-un-nuevo-proyecto-spring-boot">Paso 1: Iniciar un nuevo proyecto Spring Boot</a></li>
+<li><a href="#paso-2-agrega-tu-c%C3%B3digo">Paso 2: Agrega tu código</a></li>
+<li><a href="#paso-3-pru%C3%A9balo">Paso 3: Pruébalo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="descripción-general">DESCRIPCIÓN GENERAL</h2>
+<p>Spring Boot facilita la creación de aplicaciones independientes basadas en Spring y de nivel de producción que puedes &quot;simplemente ejecutar&quot;.</p>
+<p>Tenemos una visión objetiva de la plataforma Spring y las bibliotecas de terceros para que puedas empezar sin complicaciones. La mayoría de las aplicaciones Spring Boot requieren una configuración mínima de Spring.</p>
+<p><strong>Características</strong></p>
+<ul>
+<li>Crear aplicaciones Spring independientes</li>
+<li>Incruste Tomcat, Jetty o Undertow directamente (sin necesidad de implementar archivos WAR)</li>
+<li>Proporcionar dependencias de &quot;inicio&quot; con opiniones para simplificar la configuración de compilación</li>
+<li>Configurar automáticamente Spring y bibliotecas de terceros siempre que sea posible</li>
+<li>Proporcionar funciones listas para producción, como métricas, controles de estado y configuración externalizada.</li>
+<li>No requiere generación de código y no requiere configuración XML</li>
+</ul>
+<h2 id="guía-de-inicio-rápido">GUÍA DE INICIO RÁPIDO</h2>
+<p><strong>Lo que construirás</strong>:
+Crearás un endpoint clásico de <strong>&quot;¡Hola Mundo!&quot;</strong> al que cualquier navegador podrá conectarse. Incluso puedes decirle tu nombre y responderá de forma más intuitiva.</p>
+<p><strong>Lo que necesitarás:</strong></p>
+<ul>
+<li>
+<p>Un entorno de desarrollo integrado (IDE)
+Las opciones populares incluyen <strong>IntelliJ</strong> IDEA, <strong>Visual Studio Code</strong> con Paquete de extensión Spring Boot, o <strong>Eclipse</strong> conHerramientas de resorte.</p>
+</li>
+<li>
+<p>Un <strong>kit de desarrollo de Java</strong>™ (JDK)
+RecomendamosJDK de BellSoft Libericaversión 17 o 21.</p>
+</li>
+</ul>
+<h3 id="paso-1-iniciar-un-nuevo-proyecto-spring-boot">Paso 1: Iniciar un nuevo proyecto Spring Boot</h3>
+<p>Usar <a href="https://start.spring.io/">start.spring.io</a> Para crear un proyecto web, en el cuadro de diálogo &quot;Dependencias&quot;, busque y agregue la dependencia &quot;web&quot; como se muestra en la captura de pantalla. Presione el botón &quot;Generar&quot;, descargue el archivo zip y descomprímalo en una carpeta de su computadora.</p>
+<img src="file:///u:\GJLDWESProyectoDWES\doc\images\quickstart-1-dark.png" width="800px">
+<p>Proyectos creados por <a href="https://start.spring.io/">start.spring.io</a> contienen un framework Spring Boot que prepara Spring para funcionar en tu aplicación, sin necesidad de mucho código ni configuración. Spring Boot es la forma más rápida y popular de iniciar proyectos Spring.</p>
+<h3 id="paso-2-agrega-tu-código">Paso 2: Agrega tu código</h3>
+<p>Abra el proyecto en su IDE y localice el archivo <code>DemoApplication.java</code> en la carpeta <code>src/main/java/com/example/demo</code> . Ahora modifique el contenido del archivo añadiendo el método y las anotaciones adicionales que se muestran en el código a continuación. Puede copiar y pegar el código o simplemente escribirlo.</p>
+<pre><code class="language-java"><span class="hljs-keyword">package</span> com.example.demo;
+<span class="hljs-keyword">import</span> org.springframework.boot.SpringApplication;
+<span class="hljs-keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;
+<span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.GetMapping;
+<span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.RequestParam;
+<span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.RestController;
+
+<span class="hljs-meta">@SpringBootApplication</span>
+<span class="hljs-meta">@RestController</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">DemoApplication</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+      SpringApplication.run(DemoApplication.class, args);
+    }
+    <span class="hljs-meta">@GetMapping(&quot;/hello&quot;)</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">hello</span><span class="hljs-params">(<span class="hljs-meta">@RequestParam(value = &quot;name&quot;, defaultValue = &quot;World&quot;)</span> String name)</span> {
+      <span class="hljs-keyword">return</span> String.format(<span class="hljs-string">&quot;Hello %s!&quot;</span>, name);
+    }
+}
+</code></pre>
+<p>Este es todo el código necesario para crear un servicio web simple “Hola mundo” en Spring Boot.</p>
+<p>El método <code>hello()</code> que añadimos está diseñado para tomar un parámetro de cadena llamado nombre y combinarlo con la palabra <code>&quot;Hello&quot;</code> en el código. Esto significa que si se especifica el nombre <code>&quot;Amy&quot;</code> en la solicitud, la respuesta sería &quot;Hola Amy&quot;.</p>
+<p>La anotación <code>@RestController</code> indica a Spring que este código describe un punto final que debe estar disponible en la web. <code>@GetMapping(“/hello”)</code> Indica a Spring que use nuestro método <code>hello()</code> para responder a las solicitudes enviadas a la dirección <code>http://localhost:8080/hello</code>. Finalmente, <code>@RequestParam</code> indica a Spring que espere un valor de nombre en la solicitud; si no está presente, usará la palabra <code>&quot;World&quot;</code> por defecto.</p>
+<h3 id="paso-3-pruébalo">Paso 3: Pruébalo</h3>
+<p>Construyamos y ejecutemos el programa. Abra una línea de comandos (o terminal) y navegue a la carpeta donde se encuentran los archivos del proyecto. Podemos compilar y ejecutar la aplicación con el siguiente comando:</p>
+<p>En windows:</p>
+<pre><code class="language-bash">.\gradlew.bat bootRun
+</code></pre>
+<p>Deberías ver un resultado muy similar a esto:
+<img src="file:///u:\GJLDWESProyectoDWES\doc\images\quickstart-2.png" width="1000px"></p>
+<p>Las últimas líneas indican que Spring ha comenzado. El servidor Apache Tomcat integrado de Spring Boot actúa como servidor web y escucha las solicitudes en el puerto <code>localhost:8080</code>. Abra su navegador y escriba <code>http://localhost:8080/hello</code>. Debería obtener una respuesta amigable como esta:</p>
+<img src="file:///u:\GJLDWESProyectoDWES\doc\images\quickstart-3.png" width="800px">
+            
+            
+        </body>
+        </html>

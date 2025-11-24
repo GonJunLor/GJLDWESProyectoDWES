@@ -40,17 +40,17 @@
                         <h4>Estudio Tema 1</h4>
                     </a>
                 </article>
-                <!-- <article class="practica">
-                    <iframe src="doc/EstudioTema1.pdf"></iframe>
-                    <a href="" target="_blank">
+                <article class="practica">
+                    <iframe src="doc/out/Spring Boot.html"></iframe>
+                    <a href="https://github.com/GonJunLor/GJLDWESProyectoDWES/blob/developerGJL/doc/Spring%20Boot.md" target="_blank">
                         <div class="tituloPractica">
                             <p>Tema 1</p>
                             <p>DESARROLLO WEB EN ENTORNO SERVIDOR</p>
                         </div>
                         <div class="superpuesto"></div>
-                        <h4>Estudio Framework</h4>
+                        <h4>Framework - Spring Boot</h4>
                     </a>
-                </article> -->
+                </article>
                 <article class="practica">
                     <iframe src="doc/README.html"></iframe>
                     <a href="https://github.com/GonJunLor/GJLDAWProyectoDAW/blob/master/README.md" target="_blank">
@@ -62,6 +62,28 @@
                         <h4>Documentación ED y EE</h4>
                     </a>
                 </article>
+                <article class="practica">
+                    <iframe src="doc/out/Clases y funciones.html"></iframe>
+                    <a href="https://github.com/GonJunLor/GJLDWESProyectoDWES/blob/developerGJL/doc/Clases%20y%20funciones.md" target="_blank">
+                        <div class="tituloPractica">
+                            <p>Tema 2</p>
+                            <p>INSTALACIÓN, CONFIGURACIÓN Y DOCUMENTACIÓN DEL ENTORNO DE DESARROLLO Y DEL ENTORNO DE EXPLOTACIÓN</p>
+                        </div>
+                        <div class="superpuesto"></div>
+                        <h4>Clases y funciones PHP</h4>
+                    </a>
+                </article>
+                <!-- <article class="practica">
+                    <iframe src="doc/out/Spring Boot.html"></iframe>
+                    <a href="https://github.com/GonJunLor/GJLDWESProyectoDWES/blob/developerGJL/doc/Spring%20Boot.md" target="_blank">
+                        <div class="tituloPractica">
+                            <p>Tema 2</p>
+                            <p>INSTALACIÓN, CONFIGURACIÓN Y DOCUMENTACIÓN DEL ENTORNO DE DESARROLLO Y DEL ENTORNO DE EXPLOTACIÓN</p>
+                        </div>
+                        <div class="superpuesto"></div>
+                        <h4>Entorno de Desarrollo - Spring Boot</h4>
+                    </a>
+                </article> -->
                 <article class="practica">
                     <iframe src="../GJLDWESProyectoTema3/indexProyectoTema3.php"></iframe>
                     <a href="../GJLDWESProyectoTema3/indexProyectoTema3.php">

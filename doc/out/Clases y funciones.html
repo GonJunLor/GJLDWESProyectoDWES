@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>FUNCIONES Y CLASES DE PHP</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="funciones-y-clases-de-php">FUNCIONES Y CLASES DE PHP</h1>
+<ul>
+<li><a href="#funciones-y-clases-de-php">FUNCIONES Y CLASES DE PHP</a>
+<ul>
+<li><a href="#1-variables-superglobales">1. Variables Superglobales</a></li>
+<li><a href="#2-funciones-de-salida-y-depuraci%C3%B3n">2. Funciones de Salida y Depuración</a></li>
+<li><a href="#3-funciones-de-utilidad-tipado-y-cadenas">3. Funciones de Utilidad, Tipado y Cadenas</a></li>
+<li><a href="#4-archivos-y-control-de-flujo-http">4. Archivos y Control de Flujo HTTP</a></li>
+<li><a href="#5-funciones-de-iteraci%C3%B3n-de-arrays-y-json">5. Funciones de Iteración de Arrays y JSON</a></li>
+<li><a href="#6-clases-y-funciones-de-fechahora">6. Clases y Funciones de Fecha/Hora</a></li>
+<li><a href="#7-base-de-datos---extensi%C3%B3n-pdo">7. Base de Datos - Extensión PDO</a></li>
+<li><a href="#8-otras-extensiones-y-clases">8. Otras Extensiones y Clases</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="1-variables-superglobales"><h2>1. Variables Superglobales</h2></h2>
+<p>Son arrays asociativos que están siempre disponibles en todos los ámbitos del script para obtener información del entorno, el servidor y el cliente.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Variable</th>
+<th style="text-align:left">Propósito / Definición</th>
+<th style="text-align:left">Uso Típico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong><code>$_SERVER</code></strong></td>
+<td style="text-align:left">Contiene información creada por el <strong>servidor web</strong> sobre el entorno de ejecución (cabeceras, rutas, host).</td>
+<td style="text-align:left">Obtener la IP del usuario (<code>$_SERVER['REMOTE_ADDR']</code>) o el método de la petición (<code>$_SERVER['REQUEST_METHOD']</code>).</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>$_GET</code></strong></td>
+<td style="text-align:left">Contiene variables pasadas al script a través de la <strong>URL</strong> (método <strong>HTTP GET</strong>), en la cadena de consulta.</td>
+<td style="text-align:left">Recibir datos de la URL: <code>index.php?id=10</code>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>$_POST</code></strong></td>
+<td style="text-align:left">Contiene variables pasadas al script a través del método de entrada <strong>HTTP POST</strong>.</td>
+<td style="text-align:left">Recibir datos de formularios (contraseñas, textos largos, etc.).</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>$_REQUEST</code></strong></td>
+<td style="text-align:left">Contiene una combinación de <code>$_GET</code>, <code>$_POST</code> y <code>$_COOKIE</code>. <strong>(Uso desaconsejado)</strong>.</td>
+<td style="text-align:left">Acceder a datos sin importar su origen.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>$_SESSION</code></strong></td>
+<td style="text-align:left">Contiene variables de <strong>sesión</strong> disponibles para el usuario en múltiples páginas. Requiere <code>session_start()</code>.</td>
+<td style="text-align:left">Mantener el estado de login o un carrito de compras.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>$_COOKIE</code></strong></td>
+<td style="text-align:left">Contiene variables pasadas al script a través de las <strong>cookies HTTP</strong>.</td>
+<td style="text-align:left">Leer un identificador de usuario o token de seguimiento.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>$_FILES</code></strong></td>
+<td style="text-align:left">Contiene información sobre los archivos <strong>subidos</strong> al script.</td>
+<td style="text-align:left">Manejar el nombre, tamaño y ubicación temporal de archivos subidos.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>$_ENV</code></strong></td>
+<td style="text-align:left">Contiene variables de <strong>entorno</strong> pasadas por el sistema operativo o el servidor web.</td>
+<td style="text-align:left">Acceder a claves de configuración específicas del entorno.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="2-funciones-de-salida-y-depuración"><h2>2. Funciones de Salida y Depuración</h2></h2>
+<h3 style="color:#007bff;">echo</h3>
+<p>Usada para <strong>mostrar una o más cadenas de texto</strong> en la salida. Es ligeramente más rápido que <code>print</code>.</p>
+<p><strong>Sintaxis:</strong></p>
+<pre><code class="language-Bash"><span class="hljs-built_in">echo</span> arg1, arg2, ...;
+</code></pre>
+<p><strong>Ejemplo de Uso:</strong></p>
+<pre><code class="language-Bash"><span class="hljs-variable">$saludo</span> = <span class="hljs-string">&quot;Hola&quot;</span>;
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$saludo</span>, <span class="hljs-string">&quot; Mundo!&quot;</span>; <span class="hljs-comment"># Salida: Hola Mundo!</span>
+</code></pre>
+<h3 style="color:#007bff;">print</h3>
+<p>Usada para <strong>mostrar una sola cadena de texto</strong>. Siempre devuelve el valor <code>1</code>.</p>
+<p><strong>Sintaxis:</strong></p>
+<pre><code class="language-Bash"><span class="hljs-built_in">print</span> arg;
+</code></pre>
+<p><strong>Ejemplo de Uso:</strong></p>
+<pre><code class="language-Bash"><span class="hljs-variable">$resultado</span> = <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;Muestra esto.&quot;</span>;
+<span class="hljs-comment"># Salida: Muestra esto. ($resultado vale 1)</span>
+</code></pre>
+<h3 style="color:#007bff;">printf</h3>
+<p>Muestra una <strong>cadena formateada</strong>. Permite insertar valores en una plantilla usando especificadores de formato (<code>%s</code>, <code>%d</code>).</p>
+<p><strong>Sintaxis:</strong></p>
+<pre><code class="language-Bash"><span class="hljs-built_in">printf</span>(string <span class="hljs-variable">$format</span>, mixed ...<span class="hljs-variable">$values</span>): int|<span class="hljs-literal">false</span>
+</code></pre>
+<p><strong>Ejemplo de Uso:</strong></p>
+<pre><code class="language-Bash"><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;El número es: %d, la cadena es: %s&quot;</span>, 123, <span class="hljs-string">&quot;test&quot;</span>);
+<span class="hljs-comment"># Salida: El número es: 123, la cadena es: test</span>
+</code></pre>
+<h3 style="color:#007bff;">var_dump</h3>
+<p>Muestra <strong>información estructurada y detallada</strong> sobre una variable, incluyendo su <strong>tipo</strong> y su <strong>valor</strong>. Es la herramienta de depuración más completa.</p>
+<p><strong>Sintaxis:</strong></p>
+<pre><code class="language-Bash">var_dump(mixed <span class="hljs-variable">$value</span>, mixed ...<span class="hljs-variable">$values</span>): void
+</code></pre>
+<p><strong>Ejemplo de Uso:</strong></p>
+<pre><code class="language-Bash"><span class="hljs-variable">$arr</span> = [<span class="hljs-string">&quot;a&quot;</span> =&gt; 1, <span class="hljs-string">&quot;b&quot;</span> =&gt; 2];
+var_dump(<span class="hljs-variable">$arr</span>);
+/* Salida:
+array(2) {
+  [<span class="hljs-string">&quot;a&quot;</span>]=&gt; int(1)
+  [<span class="hljs-string">&quot;b&quot;</span>]=&gt; int(2)
+}
+*/
+</code></pre>
+<h3 style="color:#007bff;">print_r</h3>
+<p>Imprime información <strong>legible</strong> sobre una variable. Es útil para inspeccionar <strong>arrays</strong> y <strong>objetos</strong>, mostrando sus claves y valores de forma estructurada.</p>
+<p><strong>Sintaxis:</strong></p>
+<pre><code class="language-Bash">print_r(mixed <span class="hljs-variable">$value</span>, bool <span class="hljs-variable">$return</span> = <span class="hljs-literal">false</span>): string|bool
+</code></pre>
+<p><strong>Ejemplo de Uso:</strong></p>
+<pre><code class="language-Bash"><span class="hljs-variable">$arr</span> = [<span class="hljs-string">&quot;a&quot;</span> =&gt; 1, <span class="hljs-string">&quot;b&quot;</span> =&gt; 2];
+print_r(<span class="hljs-variable">$arr</span>);
+<span class="hljs-comment"># Salida: Array ( [a] =&gt; 1 [b] =&gt; 2 )</span>
+</code></pre>
+<h3 style="color:#007bff;">phpinfo</h3>
+<p>Imprime una gran cantidad de <strong>información sobre el estado actual de PHP</strong>, incluyendo opciones de compilación, extensiones habilitadas y configuración.</p>
+<p><strong>Sintaxis:</strong></p>
+<pre><code class="language-Bash">phpinfo(int <span class="hljs-variable">$flags</span> = INFO_ALL): bool
+</code></pre>
+<p><strong>Ejemplo de Uso:</strong></p>
+<pre><code class="language-Bash"><span class="hljs-comment"># Muestra la configuración completa de PHP en el navegador</span>
+phpinfo();
+</code></pre>
+<h3 style="color:#007bff;">highlight_file</h3>
+<p><strong>Colorea (resalta)</strong> el código fuente de un archivo PHP usando la sintaxis de HTML. Útil para mostrar código fuente.</p>
+<p><strong>Sintaxis:</strong></p>
+<pre><code class="language-Bash">highlight_file(string <span class="hljs-variable">$file_name</span>, bool <span class="hljs-variable">$return</span> = <span class="hljs-literal">false</span>): string|bool
+</code></pre>
+<p><strong>Ejemplo de Uso:</strong></p>
+<pre><code class="language-Bash"><span class="hljs-comment"># Asume que &#x27;index.php&#x27; existe</span>
+highlight_file(<span class="hljs-string">&#x27;index.php&#x27;</span>);
+</code></pre>
+<h3 style="color:#007bff;">exit</h3>
+<p>Es una <strong>construcción del lenguaje</strong> (similar a <code>die()</code>) que <strong>termina la ejecución del script</strong>. Opcionalmente, puede imprimir un mensaje antes de salir.</p>
+<p><strong>Sintaxis:</strong></p>
+<pre><code class="language-Bash"><span class="hljs-built_in">exit</span>(string|int <span class="hljs-variable">$status</span> = 0): void
+</code></pre>
+<p><strong>Ejemplo de Uso:</strong></p>
+<pre><code class="language-Bash"><span class="hljs-keyword">if</span> (<span class="hljs-variable">$error</span>) {
+    <span class="hljs-built_in">exit</span>(<span class="hljs-string">&#x27;Ocurrió un error fatal.&#x27;</span>);
+}
+</code></pre>
+<hr>
+<h2 id="3-funciones-de-utilidad-tipado-y-cadenas"><h2>3. Funciones de Utilidad, Tipado y Cadenas</h2></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Elemento</th>
+<th style="text-align:left">Tipo</th>
+<th style="text-align:left">Propósito / Definición</th>
+<th style="text-align:left">Uso y Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong><code>isset</code></strong></td>
+<td style="text-align:left">Función</td>
+<td style="text-align:left">Determina si una variable <strong>está declarada y su valor no es <code>NULL</code></strong>. Fundamental para validar datos de entrada.</td>
+<td style="text-align:left">if (isset($_POST['usuario'])) { ... }</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>empty</code></strong></td>
+<td style="text-align:left">Función</td>
+<td style="text-align:left">Determina si una variable <strong>está vacía</strong>. (NULL, <code>false</code>, <code>0</code>, <code>&quot;&quot;</code>, <code>array()</code>).</td>
+<td style="text-align:left">if (empty($nombre)) { echo &quot;Vacío&quot;; }</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>gettype</code></strong></td>
+<td style="text-align:left">Función</td>
+<td style="text-align:left">Devuelve el <strong>tipo de la variable</strong> dada como una cadena (<code>integer</code>, <code>string</code>, <code>array</code>, <code>object</code>, etc.).</td>
+<td style="text-align:left">echo gettype(5); # integer</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>is_string</code></strong></td>
+<td style="text-align:left">Función</td>
+<td style="text-align:left">Comprueba si el tipo de una variable es una <strong>cadena de texto</strong> (<code>string</code>).</td>
+<td style="text-align:left">var_dump(is_string(&quot;Hola&quot;)); # true</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>str_replace</code></strong></td>
+<td style="text-align:left">Función</td>
+<td style="text-align:left"><strong>Reemplaza todas las ocurrencias</strong> de una subcadena buscada por una de reemplazo.</td>
+<td style="text-align:left">str_replace(&quot;mundo&quot;, &quot;universo&quot;, &quot;Hola mundo.&quot;)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>strtolower</code></strong></td>
+<td style="text-align:left">Función</td>
+<td style="text-align:left"><strong>Convierte una cadena de texto a minúsculas</strong>.</td>
+<td style="text-align:left">strtolower(&quot;TEXTO&quot;); # texto</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>number_format</code></strong></td>
+<td style="text-align:left">Función</td>
+<td style="text-align:left"><strong>Formatea un número</strong> con miles agrupados y un punto decimal.</td>
+<td style="text-align:left">number_format(1234.56, 2, ',', '.'); # 1.234,56</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>constant</code></strong></td>
+<td style="text-align:left">Función</td>
+<td style="text-align:left">Devuelve el <strong>valor de una constante</strong>, dado su nombre como cadena.</td>
+<td style="text-align:left">constant(&quot;MAX_SIZE&quot;)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>get_loaded_extensions</code></strong></td>
+<td style="text-align:left">Función</td>
+<td style="text-align:left">Devuelve un <strong>array con los nombres de todas las extensiones PHP cargadas</strong> y disponibles.</td>
+<td style="text-align:left">print_r(get_loaded_extensions());</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="4-archivos-y-control-de-flujo-http"><h2>4. Archivos y Control de Flujo HTTP</h2></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Elemento</th>
+<th style="text-align:left">Tipo</th>
+<th style="text-align:left">Propósito / Definición</th>
+<th style="text-align:left">Uso y Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong><code>file_get_contents</code></strong></td>
+<td style="text-align:left">Función</td>
+<td style="text-align:left"><strong>Lee todo el contenido de un archivo</strong> en una única cadena de texto.</td>
+<td style="text-align:left">$data = file_get_contents('datos.txt');</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>file_put_contents</code></strong></td>
+<td style="text-align:left">Función</td>
+<td style="text-align:left"><strong>Escribe una cadena de datos en un archivo</strong>. Sobrescribe por defecto, usa <code>FILE_APPEND</code> para añadir.</td>
+<td style="text-align:left">file_put_contents('log.txt', $error, FILE_APPEND);</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>file_exists</code></strong></td>
+<td style="text-align:left">Función</td>
+<td style="text-align:left"><strong>Verifica si un archivo o directorio existe</strong>.</td>
+<td style="text-align:left">if (file_exists('config.php')) { ... }</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>require_once</code></strong></td>
+<td style="text-align:left">Construcción</td>
+<td style="text-align:left"><strong>Incluye y evalúa un archivo</strong> específico. Si ya fue incluido, lo omite. <strong>Detiene la ejecución</strong> si no se encuentra.</td>
+<td style="text-align:left">require_once 'clase_base.php';</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>header</code></strong></td>
+<td style="text-align:left">Función</td>
+<td style="text-align:left"><strong>Envía una cabecera HTTP sin procesar</strong> al cliente (navegador). Debe invocarse <strong>antes de cualquier salida</strong>.</td>
+<td style="text-align:left">header('Location: /inicio.php'); exit;</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="5-funciones-de-iteración-de-arrays-y-json"><h2>5. Funciones de Iteración de Arrays y JSON</h2></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Elemento</th>
+<th style="text-align:left">Tipo</th>
+<th style="text-align:left">Propósito / Definición</th>
+<th style="text-align:left">Uso y Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong><code>reset</code></strong></td>
+<td style="text-align:left">Función</td>
+<td style="text-align:left"><strong>Establece el puntero interno de un array al primer elemento</strong> y devuelve su valor.</td>
+<td style="text-align:left">echo reset($array);</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>current</code></strong></td>
+<td style="text-align:left">Función</td>
+<td style="text-align:left">Devuelve el <strong>valor del elemento actual</strong> al que apunta el puntero.</td>
+<td style="text-align:left">echo current($array);</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>key</code></strong></td>
+<td style="text-align:left">Función</td>
+<td style="text-align:left">Devuelve la <strong>clave del elemento actual</strong> al que apunta el puntero.</td>
+<td style="text-align:left">echo key($array);</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>next</code></strong></td>
+<td style="text-align:left">Función</td>
+<td style="text-align:left"><strong>Avanza el puntero interno</strong> del array un lugar y devuelve el valor del nuevo elemento.</td>
+<td style="text-align:left">echo next($array);</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>json_encode</code></strong></td>
+<td style="text-align:left">Función</td>
+<td style="text-align:left">Devuelve la <strong>representación JSON</strong> de un valor PHP. Crucial para APIs.</td>
+<td style="text-align:left">json_encode($array_datos)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>json_decode</code></strong></td>
+<td style="text-align:left">Función</td>
+<td style="text-align:left"><strong>Decodifica una cadena JSON</strong> a un valor PHP. Devuelve un objeto por defecto; usa <code>true</code> para array asociativo.</td>
+<td style="text-align:left">json_decode($json_string, true)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="6-clases-y-funciones-de-fechahora"><h2>6. Clases y Funciones de Fecha/Hora</h2></h2>
+<h3 style="color:#007bff;">Clase DateTime</h3>
+<p>La clase orientada a objetos para manejar fechas y horas de manera robusta.</p>
+<p><strong><code>format(string $format): string</code></strong></p>
+<p>Devuelve la fecha/hora en el <strong>formato especificado</strong> como cadena.</p>
+<pre><code class="language-Bash"><span class="hljs-variable">$fecha</span>-&gt;format(<span class="hljs-string">&#x27;Y-m-d H:i:s&#x27;</span>)
+</code></pre>
+<p><strong><code>getTimestamp(): int</code></strong></p>
+<p>Devuelve el <strong>timestamp UNIX</strong> (segundos desde 1970) para el objeto <code>DateTime</code>.</p>
+<pre><code class="language-Bash"><span class="hljs-variable">$fecha</span>-&gt;getTimestamp()
+</code></pre>
+<p><strong><code>diff(DateTimeInterface $targetObject): DateInterval</code></strong></p>
+<p>Calcula la <strong>diferencia entre dos objetos <code>DateTime</code></strong>, devolviendo un objeto <code>DateInterval</code>.</p>
+<pre><code class="language-Bash"><span class="hljs-variable">$diferencia</span> = <span class="hljs-variable">$fecha1</span>-&gt;diff(<span class="hljs-variable">$fecha2</span>);
+</code></pre>
+<h3 style="color:#007bff;">Funciones de Configuración de Fecha</h3>
+<p>Funciones globales para establecer el contexto de la fecha/hora.</p>
+<p><strong><code>date_default_timezone_set(string $timezone_identifier): bool</code></strong></p>
+<p><strong>Establece la zona horaria predeterminada</strong> que se utilizará en todas las funciones de fecha/hora.</p>
+<pre><code class="language-Bash">date_default_timezone_set(<span class="hljs-string">&#x27;Europe/Madrid&#x27;</span>);
+</code></pre>
+<p><strong><code>setlocale(string|int $category, string|array $locales, ...): string|false</code></strong></p>
+<p><strong>Establece la configuración regional</strong> (locale), afectando a la moneda, el alfabeto y el formateo de tiempo (usado por <code>strftime</code>).</p>
+<pre><code class="language-Bash">setlocale(LC_TIME, <span class="hljs-string">&#x27;es_ES.utf8&#x27;</span>);
+</code></pre>
+<p><strong><code>strftime(string $format, ?int $timestamp = null): string|false</code></strong>
+<strong>Formatea una fecha/hora local</strong> según la configuración regional (locale) establecida por <code>setlocale</code>. (<strong>Obsoleta en PHP 8.1</strong>).</p>
+<pre><code class="language-Bash">strftime(<span class="hljs-string">&#x27;%A, %d de %B&#x27;</span>);
+</code></pre>
+<hr>
+<h2 id="7-base-de-datos---extensión-pdo"><h2>7. Base de Datos - Extensión PDO</h2></h2>
+<p><strong>PDO (PHP Data Objects)</strong> es una extensión que proporciona una interfaz uniforme para acceder a bases de datos.</p>
+<h3 style="color:#007bff;">Clase Principal: PDO</h3>
+<p>Representa la conexión a la base de datos.</p>
+<p><strong><code>prepare(string $query, array $options = []): PDOStatement|false</code></strong></p>
+<p><strong>Prepara una sentencia SQL</strong> para su ejecución. Fundamental para usar sentencias preparadas y prevenir la inyección SQL.</p>
+<pre><code class="language-Bash"><span class="hljs-variable">$stmt</span> = <span class="hljs-variable">$pdo</span>-&gt;prepare(<span class="hljs-string">&#x27;SELECT * FROM users WHERE id = :id&#x27;</span>);
+</code></pre>
+<p><strong><code>query(string $query, ?int $fetchMode = null, ...$fetchModeArgs): PDOStatement|false</code></strong></p>
+<p><strong>Ejecuta una sentencia SQL directamente</strong> y devuelve un <code>PDOStatement</code>. Se usa <strong>solo para sentencias sin valores variables</strong>.</p>
+<pre><code class="language-Bash"><span class="hljs-variable">$stmt</span> = <span class="hljs-variable">$pdo</span>-&gt;query(<span class="hljs-string">&#x27;SELECT name FROM roles&#x27;</span>);
+</code></pre>
+<p><strong><code>beginTransaction(): bool</code></strong></p>
+<p><strong>Inicia una transacción</strong>, asegurando que las siguientes operaciones se traten como una única unidad atómica.</p>
+<pre><code class="language-Bash"><span class="hljs-variable">$pdo</span>-&gt;beginTransaction();
+</code></pre>
+<p><strong><code>commit(): bool</code></strong></p>
+<p><strong>Confirma una transacción</strong>, haciendo permanentes los cambios.</p>
+<pre><code class="language-Bash"><span class="hljs-variable">$pdo</span>-&gt;commit();
+</code></pre>
+<p><strong><code>rollBack(): bool</code></strong></p>
+<p><strong>Revierte una transacción</strong>, deshaciendo todos los cambios desde que se inició.</p>
+<pre><code class="language-Bash"><span class="hljs-variable">$pdo</span>-&gt;rollBack();
+</code></pre>
+<p><strong><code>getAttribute(int $attribute): mixed</code></strong></p>
+<p><strong>Recupera el valor actual de un atributo</strong> de la conexión PDO.</p>
+<pre><code class="language-Bash"><span class="hljs-variable">$driver</span> = <span class="hljs-variable">$pdo</span>-&gt;getAttribute(PDO::ATTR_DRIVER_NAME);
+</code></pre>
+<h3 style="color:#007bff;">Clase Resultado: PDOStatement</h3>
+<p>Representa una sentencia preparada y el conjunto de resultados asociado.</p>
+<p><strong><code>execute(?array $params = null): bool</code></strong></p>
+<p><strong>Ejecuta la sentencia preparada</strong>. Opcionalmente, se le pasa un array de valores para enlazar a los marcadores.</p>
+<pre><code class="language-Bash"><span class="hljs-variable">$stmt</span>-&gt;execute([<span class="hljs-string">&#x27;:id&#x27;</span> =&gt; 5]);
+</code></pre>
+<p><strong><code>bindParam(string|int $param, mixed &amp;$var, int $type = PDO::PARAM_STR, ...): bool</code></strong></p>
+<p><strong>Enlaza una variable PHP a un marcador</strong> de posición. El valor se obtiene en el momento de la ejecución.</p>
+<pre><code class="language-Bash"><span class="hljs-variable">$stmt</span>-&gt;bindParam(<span class="hljs-string">&#x27;:id&#x27;</span>, <span class="hljs-variable">$valor</span>);
+</code></pre>
+<p><strong><code>fetchObject(?string $class = &quot;stdClass&quot;, array $constructorArgs = []): object|false</code></strong></p>
+<p><strong>Obtiene la siguiente fila</strong> del conjunto de resultados y la devuelve <strong>como un objeto</strong>.</p>
+<pre><code class="language-Bash"><span class="hljs-variable">$obj</span> = <span class="hljs-variable">$stmt</span>-&gt;fetchObject();
+</code></pre>
+<p><strong><code>rowCount(): int</code></strong></p>
+<p>Devuelve el <strong>número de filas afectadas</strong> por la última sentencia <code>DELETE</code>, <code>INSERT</code>, o <code>UPDATE</code>.</p>
+<pre><code class="language-Bash"><span class="hljs-variable">$count</span> = <span class="hljs-variable">$stmt</span>-&gt;rowCount();
+</code></pre>
+<h3 style="color:#007bff;">Clase de Excepción: PDOException</h3>
+<p>Manejo de errores de base de datos.</p>
+<p><strong><code>getMessage(): string</code></strong></p>
+<p>Devuelve el <strong>mensaje de error</strong> asociado a la excepción PDO.</p>
+<pre><code class="language-Bash"><span class="hljs-built_in">echo</span> <span class="hljs-variable">$e</span>-&gt;getMessage();
+</code></pre>
+<p><strong><code>getCode(): string|int</code></strong></p>
+<p>Devuelve el <strong>código de error SQLSTATE</strong> (código alfanumérico) o el código de error específico del controlador.</p>
+<pre><code class="language-Bash"><span class="hljs-built_in">echo</span> <span class="hljs-variable">$e</span>-&gt;getCode();
+</code></pre>
+<hr>
+<h2 id="8-otras-extensiones-y-clases"><h2>8. Otras Extensiones y Clases</h2></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Elemento</th>
+<th style="text-align:left">Tipo</th>
+<th style="text-align:left">Propósito / Definición</th>
+<th style="text-align:left">Uso Típico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong><code>MYSQLI</code></strong></td>
+<td style="text-align:left">Clase/Extensión</td>
+<td style="text-align:left">Extensión de PHP moderna para interactuar con bases de datos <strong>MySQL</strong>. Soporta POO y programación procedural.</td>
+<td style="text-align:left">Conexión y consultas directas a MySQL.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>DOMDocument</code></strong></td>
+<td style="text-align:left">Clase</td>
+<td style="text-align:left">Clase que proporciona una forma de <strong>trabajar con documentos HTML o XML</strong> usando el <strong>DOM</strong> (Document Object Model).</td>
+<td style="text-align:left">Analizar (parsear) documentos HTML o construir archivos XML.</td>
+</tr>
+</tbody>
+</table>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>
