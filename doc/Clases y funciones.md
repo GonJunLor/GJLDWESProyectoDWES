@@ -1,20 +1,20 @@
 # FUNCIONES Y CLASES DE PHP
 
 - [FUNCIONES Y CLASES DE PHP](#funciones-y-clases-de-php)
-  - [1. Variables Superglobales](#1-variables-superglobales)
-  - [2. Funciones de Salida](#2-funciones-de-salida)
-  - [3. Funciones de Utilidad, Tipado y Cadenas](#3-funciones-de-utilidad-tipado-y-cadenas)
-  - [4. Archivos](#4-archivos)
-  - [4.1 Header](#41-header)
-  - [5. Funciones de Iteración de Arrays y JSON](#5-funciones-de-iteración-de-arrays-y-json)
-  - [6. Clases y Funciones de Fecha/Hora](#6-clases-y-funciones-de-fechahora)
-  - [7. Base de Datos - Extensión PDO](#7-base-de-datos---extensión-pdo)
-  - [8. Otras Extensiones y Clases](#8-otras-extensiones-y-clases)
+  - [Variables Superglobales](#variables-superglobales)
+  - [Funciones de Salida](#funciones-de-salida)
+  - [Funciones de Utilidad, Tipado y Cadenas](#funciones-de-utilidad-tipado-y-cadenas)
+  - [Archivos](#archivos)
+  - [Header](#header)
+  - [Funciones de Iteración de Arrays y JSON](#funciones-de-iteración-de-arrays-y-json)
+  - [Clases y Funciones de Fecha/Hora](#clases-y-funciones-de-fechahora)
+  - [Base de Datos - Extensión PDO](#base-de-datos---extensión-pdo)
+  - [Otras Extensiones y Clases](#otras-extensiones-y-clases)
 
 
 <hr>
 
-## <h2>1. Variables Superglobales</h2>
+## <h2>Variables Superglobales</h2>
 
 Son arrays asociativos que están siempre disponibles en todos los ámbitos del script para obtener información del entorno, el servidor y el cliente.
 
@@ -32,7 +32,7 @@ Son arrays asociativos que están siempre disponibles en todos los ámbitos del 
 
 <hr>
 
-## <h2>2. Funciones de Salida</h2>
+## <h2>Funciones de Salida</h2>
 
 <h3 style="color:#007bff;">echo</h3>
 
@@ -172,7 +172,7 @@ https://www.php.net/manual/es/function.exit.php
 
 <hr>
 
-## <h2>3. Funciones de Utilidad, Tipado y Cadenas</h2>
+## <h2>Funciones de Utilidad, Tipado y Cadenas</h2>
 
 | Elemento | Enlace | Propósito / Definición | Uso y Ejemplo |
 | :--- | :--- | :--- | :--- |
@@ -188,7 +188,7 @@ https://www.php.net/manual/es/function.exit.php
 
 <hr>
 
-## <h2>4. Archivos</h2>
+## <h2>Archivos</h2>
 
 | Elemento | Enlace | Propósito / Definición | Uso y Ejemplo |
 | :--- | :--- | :--- | :--- |
@@ -200,7 +200,7 @@ https://www.php.net/manual/es/function.exit.php
 
 <hr>
 
-## <h2>4.1 Header</h2>
+## <h2>Header</h2>
 
 https://www.php.net/manual/es/function.header.php
 
@@ -209,12 +209,19 @@ https://www.php.net/manual/es/function.header.php
 **Envía una cabecera HTTP sin procesar** al cliente (navegador). Debe invocarse **antes de cualquier salida**. 
 
 ````php
-header('Location: /inicio.php'); exit; 
+// Redirigir a otra página
+header('Location: /inicio.php');
+
+// Carga el formulario de login por defecto
+header('WWW-Authenticate: Basic realm="Contenido restringido"');
+header('HTTP/1.0 401 Unauthorized');
+
+exit;
 ````
 
 <hr>
 
-## <h2>5. Funciones de Iteración de Arrays y JSON</h2>
+## <h2>Funciones de Iteración de Arrays y JSON</h2>
 
 | Elemento | Enlace | Propósito / Definición | Uso y Ejemplo |
 | :--- | :--- | :--- | :--- |
@@ -227,7 +234,7 @@ header('Location: /inicio.php'); exit;
 
 <hr>
 
-## <h2>6. Clases y Funciones de Fecha/Hora</h2>
+## <h2>Clases y Funciones de Fecha/Hora</h2>
 
 <h3 style="color:#007bff;">Clase DateTime</h3>
 
@@ -297,7 +304,7 @@ https://www.php.net/manual/es/function.strftime.php
 
 <hr>
 
-## <h2>7. Base de Datos - Extensión PDO</h2>
+## <h2>Base de Datos - Extensión PDO</h2>
 
 **PDO (PHP Data Objects)** es una extensión que proporciona una interfaz uniforme para acceder a bases de datos.
 
@@ -316,6 +323,7 @@ https://www.php.net/manual/es/class.pdo.php
 ````Bash
 $stmt = $pdo->prepare('SELECT * FROM users WHERE id = :id');
 ````
+https://www.php.net/manual/es/pdo.prepare.php
 
 **`query(string $query, ?int $fetchMode = null, ...$fetchModeArgs): PDOStatement|false`**
 
@@ -323,6 +331,7 @@ $stmt = $pdo->prepare('SELECT * FROM users WHERE id = :id');
 ````Bash
 $stmt = $pdo->query('SELECT name FROM roles');
 ````
+https://www.php.net/manual/es/pdo.query.php
 
 **`beginTransaction(): bool`**
 
@@ -330,6 +339,7 @@ $stmt = $pdo->query('SELECT name FROM roles');
 ````Bash
 $pdo->beginTransaction();
 ````
+https://www.php.net/manual/es/pdo.begintransaction.php
 
 **`commit(): bool`**
 
@@ -337,6 +347,8 @@ $pdo->beginTransaction();
 ````Bash
 $pdo->commit();
 ````
+https://www.php.net/manual/es/pdo.commit.php
+
 
 **`rollBack(): bool`**
 
@@ -344,6 +356,8 @@ $pdo->commit();
 ````Bash
 $pdo->rollBack();
 ````
+https://www.php.net/manual/es/pdo.rollback.php
+
 
 **`getAttribute(int $attribute): mixed`**
 
@@ -351,13 +365,13 @@ $pdo->rollBack();
 ````Bash
 $driver = $pdo->getAttribute(PDO::ATTR_DRIVER_NAME);
 ````
-    
+https://www.php.net/manual/es/pdo.getattribute.php
 
 
 <h3 style="color:#007bff;">Clase Resultado: PDOStatement</h3>
 
 Representa una sentencia preparada y el conjunto de resultados asociado.
-
+https://www.php.net/manual/es/class.pdostatement.php
 
     
 **`execute(?array $params = null): bool`**
@@ -366,6 +380,7 @@ Representa una sentencia preparada y el conjunto de resultados asociado.
 ````Bash
 $stmt->execute([':id' => 5]);
 ````
+https://www.php.net/manual/es/pdostatement.execute.php
 
 
 **`bindParam(string|int $param, mixed &$var, int $type = PDO::PARAM_STR, ...): bool`**
@@ -374,6 +389,7 @@ $stmt->execute([':id' => 5]);
 ````Bash
 $stmt->bindParam(':id', $valor);
 ````
+https://www.php.net/manual/es/pdostatement.bindparam.php
 
 
 **`fetchObject(?string $class = "stdClass", array $constructorArgs = []): object|false`**
@@ -382,6 +398,7 @@ $stmt->bindParam(':id', $valor);
 ````Bash
 $obj = $stmt->fetchObject();
 ````
+https://www.php.net/manual/es/pdostatement.fetchobject.php
 
 
 **`rowCount(): int`**
@@ -390,13 +407,13 @@ Devuelve el **número de filas afectadas** por la última sentencia `DELETE`, `I
 ````Bash
 $count = $stmt->rowCount();
 ````
-    
+https://www.php.net/manual/es/pdostatement.rowcount.php
 
 
 <h3 style="color:#007bff;">Clase de Excepción: PDOException</h3>
 
 Manejo de errores de base de datos.
-
+https://www.php.net/manual/es/class.pdoexception.php
 
     
 **`getMessage(): string`**
@@ -405,6 +422,7 @@ Devuelve el **mensaje de error** asociado a la excepción PDO.
 ````Bash
 echo $e->getMessage();
 ````
+https://www.php.net/manual/es/exception.getmessage.php
 
 
 **`getCode(): string|int`**
@@ -413,14 +431,14 @@ Devuelve el **código de error SQLSTATE** (código alfanumérico) o el código d
 ````Bash
 echo $e->getCode();
 ````
-    
+https://www.php.net/manual/es/exception.getcode.php
 
 
 <hr>
 
-## <h2>8. Otras Extensiones y Clases</h2>
+## <h2>Otras Extensiones y Clases</h2>
 
-| Elemento | Tipo | Propósito / Definición | Uso Típico |
+| Elemento | Enlace | Propósito / Definición | Uso Típico |
 | :--- | :--- | :--- | :--- |
-| **`MYSQLI`** | Clase/Extensión | Extensión de PHP moderna para interactuar con bases de datos **MySQL**. Soporta POO y programación procedural. | Conexión y consultas directas a MySQL. |
-| **`DOMDocument`** | Clase | Clase que proporciona una forma de **trabajar con documentos HTML o XML** usando el **DOM** (Document Object Model). | Analizar (parsear) documentos HTML o construir archivos XML. |
+| **`MYSQLI`** | [php.net](https://www.php.net/manual/es/class.mysqli.php) | Extensión de PHP moderna para interactuar con bases de datos **MySQL**. Soporta POO y programación procedural. | Conexión y consultas directas a MySQL. |
+| **`DOMDocument`** | [php.net](https://www.php.net/manual/es/class.domdocument.php) | Clase que proporciona una forma de **trabajar con documentos HTML o XML** usando el **DOM** (Document Object Model). | Analizar (parsear) documentos HTML o construir archivos XML. |
