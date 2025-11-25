@@ -1,12 +1,16 @@
 # SPRING BOOT
 
 - [SPRING BOOT](#spring-boot)
+  - [REFERENCIAS](#referencias)
   - [DESCRIPCIÓN GENERAL](#descripción-general)
   - [GUÍA DE INICIO RÁPIDO](#guía-de-inicio-rápido)
     - [Paso 1: Iniciar un nuevo proyecto Spring Boot](#paso-1-iniciar-un-nuevo-proyecto-spring-boot)
     - [Paso 2: Agrega tu código](#paso-2-agrega-tu-código)
     - [Paso 3: Pruébalo](#paso-3-pruébalo)
+  - [ESTRUCTURA DE DIRECTORIOS](#estructura-de-directorios)
 
+## REFERENCIAS
+https://spring.io/projects/spring-boot
 
 ## DESCRIPCIÓN GENERAL
 
@@ -86,3 +90,5 @@ Deberías ver un resultado muy similar a esto:
 Las últimas líneas indican que Spring ha comenzado. El servidor Apache Tomcat integrado de Spring Boot actúa como servidor web y escucha las solicitudes en el puerto ``localhost:8080``. Abra su navegador y escriba ``http://localhost:8080/hello``. Debería obtener una respuesta amigable como esta:
 
 <img src="images/quickstart-3.png" width="800px">
+
+## ESTRUCTURA DE DIRECTORIOS

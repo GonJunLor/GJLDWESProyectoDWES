@@ -4,7 +4,8 @@
   - [1. Variables Superglobales](#1-variables-superglobales)
   - [2. Funciones de Salida](#2-funciones-de-salida)
   - [3. Funciones de Utilidad, Tipado y Cadenas](#3-funciones-de-utilidad-tipado-y-cadenas)
-  - [4. Archivos y Control de Flujo HTTP](#4-archivos-y-control-de-flujo-http)
+  - [4. Archivos](#4-archivos)
+  - [4.1 Header](#41-header)
   - [5. Funciones de Iteración de Arrays y JSON](#5-funciones-de-iteración-de-arrays-y-json)
   - [6. Clases y Funciones de Fecha/Hora](#6-clases-y-funciones-de-fechahora)
   - [7. Base de Datos - Extensión PDO](#7-base-de-datos---extensión-pdo)
@@ -47,6 +48,7 @@ echo arg1, arg2, ...;
 $saludo = "Hola";
 echo $saludo, " Mundo!"; # Salida: Hola Mundo!
 ````
+https://www.php.net/manual/es/function.echo.php
 
 <h3 style="color:#007bff;">print</h3>
 
@@ -62,6 +64,7 @@ print arg;
 $resultado = print "Muestra esto.";
 # Salida: Muestra esto. ($resultado vale 1)
 ````
+https://www.php.net/manual/es/function.print.php
 
 <h3 style="color:#007bff;">printf</h3>
 
@@ -77,6 +80,7 @@ printf(string $format, mixed ...$values): int|false
 printf("El número es: %d, la cadena es: %s", 123, "test");
 # Salida: El número es: 123, la cadena es: test
 ````
+https://www.php.net/manual/es/function.printf.php
 
 <h3 style="color:#007bff;">var_dump</h3>
 
@@ -98,6 +102,7 @@ array(2) {
 }
 */
 ````
+https://www.php.net/manual/es/function.var-dump.php
 
 <h3 style="color:#007bff;">print_r</h3>
 
@@ -114,6 +119,7 @@ $arr = ["a" => 1, "b" => 2];
 print_r($arr);
 # Salida: Array ( [a] => 1 [b] => 2 )
 ````
+https://www.php.net/manual/es/function.print-r.php
 
 <h3 style="color:#007bff;">phpinfo</h3>
 
@@ -129,6 +135,7 @@ phpinfo(int $flags = INFO_ALL): bool
 # Muestra la configuración completa de PHP en el navegador
 phpinfo();
 ````
+https://www.php.net/manual/es/function.phpinfo.php
 
 <h3 style="color:#007bff;">highlight_file</h3>
 
@@ -144,6 +151,7 @@ highlight_file(string $file_name, bool $return = false): string|bool
 # Asume que 'index.php' existe
 highlight_file('index.php');
 ````
+https://www.php.net/manual/es/function.highlight-file.php
 
 <h3 style="color:#007bff;">exit</h3>
 
@@ -160,47 +168,62 @@ if ($error) {
     exit('Ocurrió un error fatal.');
 }
 ````
+https://www.php.net/manual/es/function.exit.php
 
 <hr>
 
 ## <h2>3. Funciones de Utilidad, Tipado y Cadenas</h2>
 
-| Elemento | Tipo | Propósito / Definición | Uso y Ejemplo |
+| Elemento | Enlace | Propósito / Definición | Uso y Ejemplo |
 | :--- | :--- | :--- | :--- |
-| **`isset`** | Función | Determina si una variable **está declarada y su valor no es `NULL`**. Fundamental para validar datos de entrada. | if (isset($_POST['usuario'])) { ... } |
-| **`empty`** | Función | Determina si una variable **está vacía**. (NULL, `false`, `0`, `""`, `array()`). | if (empty($nombre)) { echo "Vacío"; } |
-| **`gettype`** | Función | Devuelve el **tipo de la variable** dada como una cadena (`integer`, `string`, `array`, `object`, etc.). | echo gettype(5); # integer |
-| **`is_string`** | Función | Comprueba si el tipo de una variable es una **cadena de texto** (`string`). | var_dump(is_string("Hola")); # true |
-| **`str_replace`** | Función | **Reemplaza todas las ocurrencias** de una subcadena buscada por una de reemplazo. | str_replace("mundo", "universo", "Hola mundo.") |
-| **`strtolower`** | Función | **Convierte una cadena de texto a minúsculas**. | strtolower("TEXTO"); # texto |
-| **`number_format`** | Función | **Formatea un número** con miles agrupados y un punto decimal. | number_format(1234.56, 2, ',', '.'); # 1.234,56 |
-| **`constant`** | Función | Devuelve el **valor de una constante**, dado su nombre como cadena. | constant("MAX_SIZE") |
-| **`get_loaded_extensions`** | Función | Devuelve un **array con los nombres de todas las extensiones PHP cargadas** y disponibles. | print_r(get_loaded_extensions()); |
+| **`isset`** | [php.net](https://www.php.net/manual/es/function.isset.php) | Determina si una variable **está declarada y su valor no es `NULL`**. Fundamental para validar datos de entrada. | if (isset($_POST['usuario'])) { ... } |
+| **`empty`** | [php.net](https://www.php.net/manual/es/function.empty.php) | Determina si una variable **está vacía**. (NULL, `false`, `0`, `""`, `array()`). | if (empty($nombre)) { echo "Vacío"; } |
+| **`gettype`** | [php.net](https://www.php.net/manual/es/function.gettype.php) | Devuelve el **tipo de la variable** dada como una cadena (`integer`, `string`, `array`, `object`, etc.). | echo gettype(5); # integer |
+| **`is_string`** | [php.net](https://www.php.net/manual/es/function.is-string.php) | Comprueba si el tipo de una variable es una **cadena de texto** (`string`). | var_dump(is_string("Hola")); # true |
+| **`str_replace`** | [php.net](https://www.php.net/manual/es/function.str-replace.php) | **Reemplaza todas las ocurrencias** de una subcadena buscada por una de reemplazo. | str_replace("mundo", "universo", "Hola mundo.") |
+| **`strtolower`** | [php.net](https://www.php.net/manual/es/function.strtolower.php) | **Convierte una cadena de texto a minúsculas**. | strtolower("TEXTO"); # texto |
+| **`number_format`** | [php.net](https://www.php.net/manual/es/function.number-format.php) | **Formatea un número** con miles agrupados y un punto decimal. | number_format(1234.56, 2, ',', '.'); # 1.234,56 |
+| **`constant`** | [php.net](https://www.php.net/manual/es/function.constant.php) | Devuelve el **valor de una constante**, dado su nombre como cadena. | constant("MAX_SIZE") |
+| **`get_loaded_extensions`** | [php.net](https://www.php.net/manual/es/function.get-loaded-extensions.php) | Devuelve un **array con los nombres de todas las extensiones PHP cargadas** y disponibles. | print_r(get_loaded_extensions()); |
 
 <hr>
 
-## <h2>4. Archivos y Control de Flujo HTTP</h2>
+## <h2>4. Archivos</h2>
 
-| Elemento | Tipo | Propósito / Definición | Uso y Ejemplo |
+| Elemento | Enlace | Propósito / Definición | Uso y Ejemplo |
 | :--- | :--- | :--- | :--- |
-| **`file_get_contents`** | Función | **Lee todo el contenido de un archivo** en una única cadena de texto. | $data = file_get_contents('datos.txt'); |
-| **`file_put_contents`** | Función | **Escribe una cadena de datos en un archivo**. Sobrescribe por defecto, usa `FILE_APPEND` para añadir. | file_put_contents('log.txt', $error, FILE_APPEND); |
-| **`file_exists`** | Función | **Verifica si un archivo o directorio existe**. | if (file_exists('config.php')) { ... } |
-| **`require_once`** | Construcción | **Incluye y evalúa un archivo** específico. Si ya fue incluido, lo omite. **Detiene la ejecución** si no se encuentra. | require_once 'clase_base.php'; |
-| **`header`** | Función | **Envía una cabecera HTTP sin procesar** al cliente (navegador). Debe invocarse **antes de cualquier salida**. | header('Location: /inicio.php'); exit; |
+| **`file_get_contents`** | [php.net](https://www.php.net/manual/es/function.file-get-contents.php) | **Lee todo el contenido de un archivo** en una única cadena de texto. | $data = file_get_contents('datos.txt'); |
+| **`file_put_contents`** | [php.net](https://www.php.net/manual/es/function.file-put-contents.php) | **Escribe una cadena de datos en un archivo**. Sobrescribe por defecto, usa `FILE_APPEND` para añadir. | file_put_contents('log.txt', $error, FILE_APPEND); |
+| **`file_exists`** | [php.net](https://www.php.net/manual/es/function.file-exists.php) | **Verifica si un archivo o directorio existe**. | if (file_exists('config.php')) { ... } |
+| **`require_once`** | [php.net](https://www.php.net/manual/es/function.require-once.php) | **Incluye y evalúa un archivo** específico. Si ya fue incluido, lo omite. **Detiene la ejecución** si no se encuentra. | require_once 'clase_base.php'; |
+
+
+<hr>
+
+## <h2>4.1 Header</h2>
+
+https://www.php.net/manual/es/function.header.php
+
+**`header`**   
+
+**Envía una cabecera HTTP sin procesar** al cliente (navegador). Debe invocarse **antes de cualquier salida**. 
+
+````php
+header('Location: /inicio.php'); exit; 
+````
 
 <hr>
 
 ## <h2>5. Funciones de Iteración de Arrays y JSON</h2>
 
-| Elemento | Tipo | Propósito / Definición | Uso y Ejemplo |
+| Elemento | Enlace | Propósito / Definición | Uso y Ejemplo |
 | :--- | :--- | :--- | :--- |
-| **`reset`** | Función | **Establece el puntero interno de un array al primer elemento** y devuelve su valor. | echo reset($array); |
-| **`current`** | Función | Devuelve el **valor del elemento actual** al que apunta el puntero. | echo current($array); |
-| **`key`** | Función | Devuelve la **clave del elemento actual** al que apunta el puntero. | echo key($array); |
-| **`next`** | Función | **Avanza el puntero interno** del array un lugar y devuelve el valor del nuevo elemento. | echo next($array); |
-| **`json_encode`** | Función | Devuelve la **representación JSON** de un valor PHP. Crucial para APIs. | json_encode($array_datos) |
-| **`json_decode`** | Función | **Decodifica una cadena JSON** a un valor PHP. Devuelve un objeto por defecto; usa `true` para array asociativo. | json_decode($json_string, true) |
+| **`reset`** | [php.net](https://www.php.net/manual/es/function.reset.php) | **Establece el puntero interno de un array al primer elemento** y devuelve su valor. | echo reset($array); |
+| **`current`** | [php.net](https://www.php.net/manual/es/function.current.php) | Devuelve el **valor del elemento actual** al que apunta el puntero. | echo current($array); |
+| **`key`** | [php.net](https://www.php.net/manual/es/function.key.php) | Devuelve la **clave del elemento actual** al que apunta el puntero. | echo key($array); |
+| **`next`** | [php.net](https://www.php.net/manual/es/function.next.php) | **Avanza el puntero interno** del array un lugar y devuelve el valor del nuevo elemento. | echo next($array); |
+| **`json_encode`** | [php.net](https://www.php.net/manual/es/function.json-encode.php) | Devuelve la **representación JSON** de un valor PHP. Crucial para APIs. | json_encode($array_datos) |
+| **`json_decode`** | [php.net](https://www.php.net/manual/es/function.json-decode.php) | **Decodifica una cadena JSON** a un valor PHP. Devuelve un objeto por defecto; usa `true` para array asociativo. | json_decode($json_string, true) |
 
 <hr>
 
@@ -209,23 +232,27 @@ if ($error) {
 <h3 style="color:#007bff;">Clase DateTime</h3>
 
 La clase orientada a objetos para manejar fechas y horas de manera robusta.
+
+https://www.php.net/manual/es/class.datetime.php
+<hr>
   
 **`format(string $format): string`**
 
 Devuelve la fecha/hora en el **formato especificado** como cadena.
 
-````Bash
+````php
 $fecha->format('Y-m-d H:i:s')
 ````
+https://www.php.net/manual/es/datetime.format.php
 
 **`getTimestamp(): int`**
 
 Devuelve el **timestamp UNIX** (segundos desde 1970) para el objeto `DateTime`.
 
-````Bash
+````php
 $fecha->getTimestamp()
 ````
-
+https://www.php.net/manual/es/datetime.gettimestamp.php
 
 **`diff(DateTimeInterface $targetObject): DateInterval`**
 
@@ -234,10 +261,10 @@ Calcula la **diferencia entre dos objetos `DateTime`**, devolviendo un objeto `D
 ````Bash
 $diferencia = $fecha1->diff($fecha2);
 ````
-    
+https://www.php.net/manual/es/datetime.diff.php
 
 
-<h3 style="color:#007bff;">Funciones de Configuración de Fecha</h3>
+<h3 style="color:#007bff;">Funciones de Configuración de Zona horaria</h3>
 
 Funciones globales para establecer el contexto de la fecha/hora.
 
@@ -247,7 +274,9 @@ Funciones globales para establecer el contexto de la fecha/hora.
 ````Bash
 date_default_timezone_set('Europe/Madrid');
 ````
+https://www.php.net/manual/es/function.date-default-timezone-set.php
 
+<br>
 
 **`setlocale(string|int $category, string|array $locales, ...): string|false`**
 
@@ -255,13 +284,16 @@ date_default_timezone_set('Europe/Madrid');
 ````Bash
 setlocale(LC_TIME, 'es_ES.utf8');
 ````
+https://www.php.net/manual/es/function.setlocale.php
 
+<br>
 
 **`strftime(string $format, ?int $timestamp = null): string|false`**
 **Formatea una fecha/hora local** según la configuración regional (locale) establecida por `setlocale`. (**Obsoleta en PHP 8.1**).
 ````Bash
 strftime('%A, %d de %B');
 ````
+https://www.php.net/manual/es/function.strftime.php
 
 <hr>
 
@@ -274,7 +306,9 @@ strftime('%A, %d de %B');
 
 Representa la conexión a la base de datos.
 
+https://www.php.net/manual/es/class.pdo.php
 
+<hr>
     
 **`prepare(string $query, array $options = []): PDOStatement|false`**
 
