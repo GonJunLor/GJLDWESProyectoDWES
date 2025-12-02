@@ -92,3 +92,16 @@ Las últimas líneas indican que Spring ha comenzado. El servidor Apache Tomcat 
 <img src="images/quickstart-3.png" width="800px">
 
 ## ESTRUCTURA DE DIRECTORIOS
+
+
+Fases
+Estudio del framework
+Localizar un tutorial-curso competente
+Construir y configurar el entorno de desarrollo
+Análisis y comprensión de la funcionalidad de la aplicación
+Desarrollar la aplicacioón y probarla
+Versionar la aplicación
+Construir y configurar el entorno de producción
+Pasar la aplicación a explotación
+Usar la aplicación
+Mantenimiento de la aplicación repitiendo desde el paso 4
