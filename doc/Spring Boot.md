@@ -105,3 +105,6 @@ Construir y configurar el entorno de producción
 Pasar la aplicación a explotación
 Usar la aplicación
 Mantenimiento de la aplicación repitiendo desde el paso 4
+
+Analizar lo que cuesta usar o montar un proyecto en SpringBoot
+Analizar paso a explotación
