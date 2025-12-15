@@ -128,6 +128,17 @@
                         <h4>Login Logoff Tema 5</h4>
                     </a>
                 </article>
+                <article class="practica">
+                    <iframe src="../GJLDWESLoginLogoff/indexLoginLogoff.php"></iframe>
+                    <a href="../GJLDWESLoginLogoff/indexLoginLogoff.php">
+                        <div class="tituloPractica">
+                            <p>Tema 6</p>
+                            <p>APLICACIONES WEB MULTICAPA</p>
+                        </div>
+                        <div class="superpuesto"></div>
+                        <h4>Login Logoff</h4>
+                    </a>
+                </article>
             </div>
         </section>
     </main>
