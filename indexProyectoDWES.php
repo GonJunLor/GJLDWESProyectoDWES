@@ -119,13 +119,24 @@
                 </article>
                 <article class="practica">
                     <iframe src="../GJLDWESLoginLogoffTema5/indexLoginLogoffTema5.php"></iframe>
-                    <a href="../GJLDWESLoginLogoffTema5/indexLoginLogoffTema5.php">
+                    <a href="../GJLDWESLoginLogoffTema5/indexLoginLogoffTema5.php" target="_blank">
                         <div class="tituloPractica">
                             <p>Tema 5</p>
                             <p>DESARROLLO DE APLICACIONES WEB</p>
                         </div>
                         <div class="superpuesto"></div>
                         <h4>Login Logoff Tema 5</h4>
+                    </a>
+                </article>
+                <article class="practica">
+                    <iframe src="../GJLDWESLoginLogoff/indexLoginLogoff.php"></iframe>
+                    <a href="../GJLDWESLoginLogoff/indexLoginLogoff.php" target="_blank">
+                        <div class="tituloPractica">
+                            <p>Tema 6</p>
+                            <p>APLICACIONES WEB MULTICAPA</p>
+                        </div>
+                        <div class="superpuesto"></div>
+                        <h4>Login Logoff</h4>
                     </a>
                 </article>
             </div>
