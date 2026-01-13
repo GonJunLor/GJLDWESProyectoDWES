@@ -42,7 +42,7 @@
                 </article>
                 <article class="practica">
                     <iframe src="doc/out/Spring Boot.html"></iframe>
-                    <a href="https://github.com/GonJunLor/GJLDWESProyectoDWES/blob/developerGJL/doc/Spring%20Boot.md" target="_blank">
+                    <a href="https://github.com/GonJunLor/GJLDWESProyectoDWES/blob/developerGJL/doc/Spring_Boot.md" target="_blank">
                         <div class="tituloPractica">
                             <p>Tema 1</p>
                             <p>DESARROLLO WEB EN ENTORNO SERVIDOR</p>
@@ -73,9 +73,9 @@
                         <h4>Clases y funciones PHP</h4>
                     </a>
                 </article>
-                <!-- <article class="practica">
+                <article class="practica">
                     <iframe src="doc/out/Spring Boot.html"></iframe>
-                    <a href="https://github.com/GonJunLor/GJLDWESProyectoDWES/blob/developerGJL/doc/Spring%20Boot.md" target="_blank">
+                    <a href="https://github.com/GonJunLor/GJLDWESProyectoDWES/blob/developerGJL/doc/Spring_Boot_ED.md" target="_blank">
                         <div class="tituloPractica">
                             <p>Tema 2</p>
                             <p>INSTALACIÓN, CONFIGURACIÓN Y DOCUMENTACIÓN DEL ENTORNO DE DESARROLLO Y DEL ENTORNO DE EXPLOTACIÓN</p>
@@ -83,7 +83,7 @@
                         <div class="superpuesto"></div>
                         <h4>Entorno de Desarrollo - Spring Boot</h4>
                     </a>
-                </article> -->
+                </article>
                 <article class="practica">
                     <iframe src="../GJLDWESProyectoTema3/indexProyectoTema3.php"></iframe>
                     <a href="../GJLDWESProyectoTema3/indexProyectoTema3.php">

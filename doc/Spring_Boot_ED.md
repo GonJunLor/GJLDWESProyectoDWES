@@ -1,31 +1,11 @@
-# SPRING BOOT
+# SPRING BOOT ED
 
-- [SPRING BOOT](#spring-boot)
-  - [REFERENCIAS](#referencias)
-  - [DESCRIPCIÓN GENERAL](#descripción-general)
+- [SPRING BOOT ED](#spring-boot-ed)
   - [GUÍA DE INICIO RÁPIDO](#guía-de-inicio-rápido)
     - [Paso 1: Iniciar un nuevo proyecto Spring Boot](#paso-1-iniciar-un-nuevo-proyecto-spring-boot)
     - [Paso 2: Agrega tu código](#paso-2-agrega-tu-código)
     - [Paso 3: Pruébalo](#paso-3-pruébalo)
-  - [ESTRUCTURA DE DIRECTORIOS](#estructura-de-directorios)
 
-## REFERENCIAS
-https://spring.io/projects/spring-boot
-
-## DESCRIPCIÓN GENERAL
-
-Spring Boot facilita la creación de aplicaciones independientes basadas en Spring y de nivel de producción que puedes "simplemente ejecutar".
-
-Tenemos una visión objetiva de la plataforma Spring y las bibliotecas de terceros para que puedas empezar sin complicaciones. La mayoría de las aplicaciones Spring Boot requieren una configuración mínima de Spring.
-
-**Características**
-
-- Crear aplicaciones Spring independientes
-- Incruste Tomcat, Jetty o Undertow directamente (sin necesidad de implementar archivos WAR)
-- Proporcionar dependencias de "inicio" con opiniones para simplificar la configuración de compilación
-- Configurar automáticamente Spring y bibliotecas de terceros siempre que sea posible
-- Proporcionar funciones listas para producción, como métricas, controles de estado y configuración externalizada.
-- No requiere generación de código y no requiere configuración XML
 
 ## GUÍA DE INICIO RÁPIDO
 
@@ -90,21 +70,3 @@ Deberías ver un resultado muy similar a esto:
 Las últimas líneas indican que Spring ha comenzado. El servidor Apache Tomcat integrado de Spring Boot actúa como servidor web y escucha las solicitudes en el puerto ``localhost:8080``. Abra su navegador y escriba ``http://localhost:8080/hello``. Debería obtener una respuesta amigable como esta:
 
 <img src="images/quickstart-3.png" width="800px">
-
-## ESTRUCTURA DE DIRECTORIOS
-
-
-Fases
-Estudio del framework
-Localizar un tutorial-curso competente
-Construir y configurar el entorno de desarrollo
-Análisis y comprensión de la funcionalidad de la aplicación
-Desarrollar la aplicacioón y probarla
-Versionar la aplicación
-Construir y configurar el entorno de producción
-Pasar la aplicación a explotación
-Usar la aplicación
-Mantenimiento de la aplicación repitiendo desde el paso 4
-
-Analizar lo que cuesta usar o montar un proyecto en SpringBoot
-Analizar paso a explotación
