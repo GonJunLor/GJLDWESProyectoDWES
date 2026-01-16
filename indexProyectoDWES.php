@@ -144,10 +144,10 @@
                     <a href="../GJLDWESAplicacionFinal/index.php" target="_blank">
                         <div class="tituloPractica">
                             <p>Tema 8</p>
-                            <p></p>
+                            <p>DESARROLLO DE APLICACIONES WEB HÍBRIDAS</p>
                         </div>
                         <div class="superpuesto"></div>
-                        <h4>Login Logoff</h4>
+                        <h4>Aplicación final</h4>
                     </a>
                 </article>
             </div>
