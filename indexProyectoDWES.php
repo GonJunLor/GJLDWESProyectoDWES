@@ -139,6 +139,17 @@
                         <h4>Login Logoff</h4>
                     </a>
                 </article>
+                <article class="practica">
+                    <iframe src="../GJLDWESAplicacionFinal/index.php"></iframe>
+                    <a href="../GJLDWESAplicacionFinal/index.php" target="_blank">
+                        <div class="tituloPractica">
+                            <p>Tema 8</p>
+                            <p></p>
+                        </div>
+                        <div class="superpuesto"></div>
+                        <h4>Login Logoff</h4>
+                    </a>
+                </article>
             </div>
         </section>
     </main>
