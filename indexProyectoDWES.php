@@ -150,6 +150,17 @@
                         <h4>Tema 8</h4>
                     </a>
                 </article>
+                <article class="practica">
+                    <iframe src="https://biblioteca.gonzalojunlor.ieslossauces.es"></iframe>
+                    <a href="https://biblioteca.gonzalojunlor.ieslossauces.es" target="_blank">
+                        <div class="tituloPractica">
+                            <p>Biblioteca</p>
+                            <p></p>
+                        </div>
+                        <div class="superpuesto"></div>
+                        <h4>Tema 8</h4>
+                    </a>
+                </article>
             </div>
         </section>
     </main>
