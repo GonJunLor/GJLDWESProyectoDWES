@@ -74,8 +74,8 @@
                     </a>
                 </article>
                 <article class="practica">
-                    <iframe src="doc/out/Spring Boot.html"></iframe>
-                    <a href="https://github.com/GonJunLor/GJLDWESProyectoDWES/blob/developerGJL/doc/Spring_Boot_ED.md" target="_blank">
+                    <iframe src="https://docs.google.com/document/d/1mll_SJKe_jf_P5Ics39dbo3cn1IxB-6wyqY4wFkm-tU/edit?usp=sharing"></iframe>
+                    <a href="https://docs.google.com/document/d/1mll_SJKe_jf_P5Ics39dbo3cn1IxB-6wyqY4wFkm-tU/edit?usp=sharing" target="_blank">
                         <div class="tituloPractica">
                             <p>ED - Spring Boot</p>
                             <p>INSTALACIÓN, CONFIGURACIÓN Y DOCUMENTACIÓN DEL ED y EE</p>
