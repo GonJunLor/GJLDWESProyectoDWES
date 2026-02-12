@@ -25,19 +25,14 @@ Tenemos una visión objetiva de la plataforma Spring y las bibliotecas de tercer
 
 ## ESTRUCTURA DE DIRECTORIOS
 
+Al crear el proyecto se nos descarga un archivo comprimido con todas las carpetas del proyecto organizadas de la siguiente manera:
 
-
-Fases
-Estudio del framework
-Localizar un tutorial-curso competente
-Construir y configurar el entorno de desarrollo
-Análisis y comprensión de la funcionalidad de la aplicación
-Desarrollar la aplicacioón y probarla
-Versionar la aplicación
-Construir y configurar el entorno de producción
-Pasar la aplicación a explotación
-Usar la aplicación
-Mantenimiento de la aplicación repitiendo desde el paso 4
-
-Analizar lo que cuesta usar o montar un proyecto en SpringBoot
-Analizar paso a explotación
+* /.mvn: carpeta interna de Maven Wrapper en la que están los archivos que usan Maven sin tener que instalarlo globlalmente y garantizar que todos los desarrolladores tengan la misma versión.
+* /src/main/java: es la carpeta más importante ya que contiene el código real de la aplicación: clases, servicios, repositorios y clase principal.
+* /src/main/resources: recursos que no son código java como: application.properties o application.yml, archivos de configuración, plantillas y archivos estáticos.
+* /src/main/webapp: propia de aplicaciones web tradicionales donde se situan: JSP, HTML, CSS y JS. En SpringBoot no siempre se usa.
+* /src/test: código de tests: unitarios o de integración.
+* /target: carpeta generada al compilar. Nunca se edita a mano.
+* /webroot: no es creada por SpringBoot sino por el usuario para guardar el contenido multimedia, estilos y demás archivos manejados por el desarrollador.
+* pom.xml: el archivo más importante después del código donde se define: dependencias, versión de java usada, plugins y tipo de empaquetado.
+* mvnw y mvnw.cmd: script de Maven Wrapper para Linux/macOS (el primero), y Windows (el segundo).
